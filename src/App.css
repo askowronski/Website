@@ -6,7 +6,8 @@
 
 .leftSideNav {
   padding-top: 10%;
-  padding-right:15%;
+  padding-right: 15%;
+  z-index: 1;
 }
 
 .leftNav {
@@ -14,17 +15,169 @@
 }
 
 .floatLeft {
-  float:left;
+  float: left;
 }
 
 .fullPageImage {
-  background-image:url("./resources/london_bridge.jpg");
+  background-image: url("./resources/london_bridge.jpg");
   background-size: cover;
 }
 
 .halfPageImage {
-  background-image:url("./resources/london_bridge.jpg");
+
+  background: url("./resources/london_bridge.jpg");
   background-size: cover;
+
+}
+
+.fullPageImageNight {
+  background-image: url("./resources/london_night.jpg");
+  background-size: cover;
+ /* Safari 6.0 - 9.0 */
+
+}
+
+.fullPageImageNight2 {
+  background-image: url("./resources/london_moorings.jpg");
+  background-size: cover;
+  /* Safari 6.0 - 9.0 */
+
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  z-index:2;
+}
+
+.pictureCardContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
   width:50%;
+  z-index:1;
+}
+
+.aboutMeTextContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:50%;
+  z-index:1;
+  text-align: center;
+}
+
+.aboutMePicture {
+  width: 75%;
+  padding: 1px;
+  border:3px solid #021a40;
+  margin-top:5%;
+  z-index: 10000;
+}
+
+.aboutMePicture:hover {
+
+  /*box-shadow: 10px 10px 8px 8px #021a40;*/
+  /* #1 */
+  border: 3px solid hsla(292, 83%, 44%, 0.41);
+
+  /* #2 */
+  padding: 3px;
+  background: hsla(204, 74%, 54%, 0.22);
+
+  /* #3 */
+  outline: 3px solid hsla(0, 0%, 60%,0);
+
+  /* #4 AND INFINITY!!! (CSS3 only) */
+  box-shadow:
+      0 0 0 6px hsla(303, 90%, 70%, 0.41),
+      0 0 0 9px hsla(303, 89%, 69%, 0);
+
+}
+
+.darkTint {
+  z-index: 1;
+  position: fixed; /* keeps the screen covered during scroll */
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-color: black;
+  width:100%;
   height:100%;
 }
+
+.darkTintAnimation {
+  -webkit-animation: fade 2s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fade 2s; /* Firefox < 16 */
+  -o-animation: fade 2s; /* Opera < 12.1 */
+  animation: fade 2s;
+  opacity: .3;
+}
+
+.leftSideNavSelected {
+  z-index: 2;
+}
+
+.leftSideNavNotSelected {
+  z-index: 0;
+}
+
+.leftSideNavText {
+  z-index: 2;
+}
+
+.iconContainer {
+  margin:5px;
+  display: inline-block;
+}
+
+.aboutMeText {
+  background-color: white;
+  width:100%;
+}
+
+.nameText {
+  font-family: myFirstFont;
+  font-size: 45pt;
+
+}
+
+@font-face {
+  font-family: myFirstFont;
+  src: url('./resources/MisdemeanorDEMO-KCFonts.ttf') format('truetype');
+}
+
+
+@keyframes fade {
+  from { opacity: 0; }
+  to   { opacity: .3; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fade {
+  from { opacity: 0; }
+  to   { opacity: .3; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fade {
+  from { opacity: 0; }
+  to   { opacity: .3; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fade {
+  from { opacity: 0; }
+  to   { opacity: .3; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fade {
+  from { opacity: 0; }
+  to   { opacity: .3; }
+}
+
