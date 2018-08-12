@@ -1,0 +1,30 @@
+
+.App {
+  margin: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.leftSideNav {
+  padding-top: 10%;
+  padding-right:15%;
+}
+
+.leftNav {
+  padding-right: 5%;
+}
+
+.floatLeft {
+  float:left;
+}
+
+.fullPageImage {
+  background-image:url("./resources/london_bridge.jpg");
+  background-size: cover;
+}
+
+.halfPageImage {
+  background-image:url("./resources/london_bridge.jpg");
+  background-size: cover;
+  width:50%;
+  height:100%;
+}
