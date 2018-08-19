@@ -67,16 +67,20 @@
   top: 0;
   left: 0;
   width:50%;
-  z-index:1;
+  z-index:-1;
   text-align: center;
 }
 
 .aboutMePicture {
-  width: 75%;
+  width: 65%;
   padding: 1px;
   border:3px solid #021a40;
   margin-top:5%;
   z-index: 10000;
+  -webkit-animation: fade 3s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fade 3s; /* Firefox < 16 */
+  -o-animation: fade 3s; /* Opera < 12.1 */
+  animation: fade 3s;
 }
 
 .aboutMePicture:hover {
@@ -128,6 +132,10 @@
 
 .leftSideNavText {
   z-index: 2;
+  background-color:black;
+  border-radius: 10px;
+  width:68px;
+  text-align: center;
 }
 
 .iconContainer {
@@ -146,6 +154,40 @@
 
 }
 
+.tealColor {
+  background-color: #baa5c5;
+  opacity: .3;
+  z-index: 1;
+}
+
+.detailsContainer {
+  align-self: center;
+  width: 65%;
+  padding-left:17.5%;
+  text-justify: auto;
+  font-weight: 600;
+  z-index: 0;
+  /*text-align: center;*/
+  /*align-self: center;*/
+  /*padding: 10%;*/
+  /*margin: 15%;*/
+  /*z-index: 1;*/
+}
+
+.robotoFont {
+  font-family: 'Roboto', sans-serif;
+  text-align: -webkit-auto;
+  text-indent: 40px;
+  z-index: 1;
+}
+
+.leftMenu {
+  background-color: rgba(229,229,229, 0.3);
+  width: 70px;
+  border-radius: 15px;
+}
+
+
 @font-face {
   font-family: myFirstFont;
   src: url('./resources/MisdemeanorDEMO-KCFonts.ttf') format('truetype');
@@ -154,30 +196,30 @@
 
 @keyframes fade {
   from { opacity: 0; }
-  to   { opacity: .3; }
+  to   { opacity: 1; }
 }
 
 /* Firefox < 16 */
 @-moz-keyframes fade {
   from { opacity: 0; }
-  to   { opacity: .3; }
+  to   { opacity: 1; }
 }
 
 /* Safari, Chrome and Opera > 12.1 */
 @-webkit-keyframes fade {
   from { opacity: 0; }
-  to   { opacity: .3; }
+  to   { opacity: 1; }
 }
 
 /* Internet Explorer */
 @-ms-keyframes fade {
   from { opacity: 0; }
-  to   { opacity: .3; }
+  to   { opacity: 1; }
 }
 
 /* Opera < 12.1 */
 @-o-keyframes fade {
   from { opacity: 0; }
-  to   { opacity: .3; }
+  to   { opacity: 1; }
 }
 

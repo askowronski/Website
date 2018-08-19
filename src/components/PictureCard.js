@@ -1,5 +1,6 @@
 const React = require('react');
 import {Component, PropTypes} from 'react';
+import ArduinoCommunicator from "./ArduinoCommunicator";
 import "../App.css";
 import $ from "jquery";
 
@@ -36,6 +37,8 @@ export class PictureCard extends React.Component {
                 {this.state.showPicture ? <img src="/src/resources/andrew_skowronski.jpg" className="aboutMePicture"/>  : <span></span>
 
                 }
+
+                <ArduinoCommunicator />
 
 
 

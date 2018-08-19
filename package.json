@@ -44,6 +44,8 @@
     "react-instagram-embed": "^1.4.0",
     "react-player": "^1.6.4",
     "react-sidenav": "^2.1.3",
-    "react-svg-loader": "^2.1.0"
+    "react-svg-loader": "^2.1.0",
+    "requirejs": "^2.3.5",
+    "serialport": "^6.2.2"
   }
 }

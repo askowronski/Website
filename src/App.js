@@ -62,7 +62,9 @@ class App extends React.Component {
 
                 </div>;
         } else {
-            return <div></div>;
+            return <div> <a href="/src/resources/brownianmotianofatrappedmicrosphereion.pdf">
+                RESEARCH
+            </a></div>;
         }
 
     }
@@ -80,9 +82,9 @@ class App extends React.Component {
     render(){
         return(
 
-            <div  >
+            <div  className="">
                 {this.returndarkTintContainer()}
-                <div className="floatLeft">
+                <div className="floatLeft leftMenu">
             <Header selectedOption={this.state.selectedOption} updateSelectedOption={this.updateSelectedOption}/>
 
                 </div>

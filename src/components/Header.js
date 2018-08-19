@@ -12,6 +12,10 @@ import GuitarIcon from '../resources/electric-guitar.svg'
 import { ic_laptop_mac } from 'react-icons-kit/md/ic_laptop_mac';
 import { ic_music_note } from 'react-icons-kit/md/ic_music_note';
 import { ic_face } from 'react-icons-kit/md/ic_face';
+import { ic_contact_mail } from 'react-icons-kit/md/ic_contact_mail';
+import { ic_book } from 'react-icons-kit/md/ic_book';
+
+
 import "../App.css";
 import $ from "jquery";
 
@@ -22,7 +26,7 @@ export class Header extends React.Component {
         super(props);
         this.state = {
             selectedOption:props.selectedOption,
-            showText:[false,false,false]
+            showText:[false,false,false,false,false]
         };
         this.changeSelectedOption = this.changeSelectedOption.bind(this);
         this.showText = this.showText.bind(this);
@@ -79,15 +83,10 @@ export class Header extends React.Component {
             $(document.body).addClass('fullPageImageNight2');
         }
         $('#darkTintContainer').addClass('darkTintAnimation');
-
-        if (this.state.selectedOption === 'About') {
-
-            return <text color="#000000" fontStyle={20}>swag</text>;
-        }
     };
 
     showText(int) {
-        var textVals = [false,false,false];
+        var textVals = [false,false,false,false,false];
         textVals[int] = true;
       this.setState({
           showText:textVals
@@ -96,7 +95,7 @@ export class Header extends React.Component {
     };
 
     hideText() {
-        var textVals = [false,false,false];
+        var textVals = [false,false,false,false,false];
         this.setState({
             showText:textVals
         });
@@ -160,6 +159,26 @@ const MySideNav = (props) => (
                     <div className="leftSideNavText">
 
                         {props.showTextVals[2] ? 'Music' : ''}
+                    </div>
+                </NavText>
+            </Nav>
+            <Nav id='Research' className="leftSideNav">
+                <NavIcon className="leftSideNav"><SvgIcon onMouseEnter={() => props.showText(3)} onMouseLeave={props.hideText}
+                                                          classes="leftSideNavNotSelected" id="researchIcon" size={45} icon={ic_book}/></NavIcon>
+                <NavText className="leftSideNav" >
+                    <div className="leftSideNavText">
+
+                        {props.showTextVals[3] ? 'Research' : ''}
+                    </div>
+                </NavText>
+            </Nav>
+            <Nav id='Contact' className="leftSideNav">
+                <NavIcon className="leftSideNav"><SvgIcon onMouseEnter={() => props.showText(4)} onMouseLeave={props.hideText}
+                                                          classes="leftSideNavNotSelected" id="contactIcon" size={45} icon={ic_contact_mail}/></NavIcon>
+                <NavText className="leftSideNav" >
+                    <div className="leftSideNavText">
+
+                        {props.showTextVals[4] ? 'Contact' : ''}
                     </div>
                 </NavText>
             </Nav>
