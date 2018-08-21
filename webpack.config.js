@@ -53,8 +53,5 @@ module.exports = {
                     loader: 'file-loader'
                 }]
             }],
-    },
-    externals: {
-        serialport: "serialport"
     }
 };

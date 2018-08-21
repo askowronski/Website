@@ -1,6 +1,6 @@
 const React = require('react');
 import {Component, PropTypes} from 'react';
-import ArduinoCommunicator from "./ArduinoCommunicator";
+import ArduinoCommunicator, {TemperatureGraph} from "./TemperatureGraph";
 import "../App.css";
 import $ from "jquery";
 
@@ -38,7 +38,7 @@ export class PictureCard extends React.Component {
 
                 }
 
-                <ArduinoCommunicator />
+                <TemperatureGraph size={[500,500]}/>
 
 
 
