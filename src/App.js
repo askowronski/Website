@@ -1,5 +1,6 @@
 var React = require('react');
 import {Component, PropTypes} from 'react';
+import TemperatureGraph from "./components/TemperatureGraph";
 import AboutMeText from "./components/AboutMeText";
 import PictureCard from "./components/PictureCard";
 import Footer from "./components/Footer";
@@ -64,7 +65,14 @@ class App extends React.Component {
         } else {
             return <div> <a href="/src/resources/brownianmotianofatrappedmicrosphereion.pdf">
                 RESEARCH
-            </a></div>;
+            </a>
+
+            <div className="graphic-container">
+
+
+                <TemperatureGraph size={[500,500]}/>
+
+            </div></div>;
         }
 
     }
@@ -88,11 +96,13 @@ class App extends React.Component {
             <Header selectedOption={this.state.selectedOption} updateSelectedOption={this.updateSelectedOption}/>
 
                 </div>
-                 <div className="App" style={{display:'inline-block'}}>
-                     <div className="aboutMeContainer" style={{width:'50%', backgroundColor:"#FFF", height:100, align:'right'}}>
+                 <div className="App" style={{display:'inline-block',width:'90%'}}>
+                     <div className="pageContainer" style={{width:'100%', height:100, align:'right'}}>
                          {this.returnPage()}
                      </div>
                  </div>
+                {/*<div style={{width:'50%'}}>*/}
+                {/*</div>*/}
 
                 <div>
                     <Footer>

@@ -187,6 +187,11 @@
   border-radius: 15px;
 }
 
+.graphic-container {
+  width:80%;
+  margin-top: 5%;
+}
+
 
 @font-face {
   font-family: myFirstFont;

@@ -38,7 +38,6 @@ export class PictureCard extends React.Component {
 
                 }
 
-                <TemperatureGraph size={[500,500]}/>
 
 
 
