@@ -13,6 +13,8 @@ import $ from "jquery";
 import * as d3 from "d3";
 import ReactEcharts from 'echarts-for-react';  // or var ReactEcharts = require('echarts-for-react');
 import echarts from 'echarts';
+import moment from 'moment';
+
 
 echarts.registerTheme('my_theme', {
     backgroundColor: '#f4cccc'
@@ -45,9 +47,22 @@ export class TemperatureGraph extends React.Component {
 
 
         }).done(function(data) {
+
+            var temperatures = {
+                temperatures:[]
+
+            };
+
+            var parsedData = JSON.parse(JSON.stringify(data)).temperatures;
+            for(var i in parsedData){
+                 temperatures.temperatures.push({
+                     "date":parsedData[i].date,
+                     "temperature":parseInt(parsedData[i].temperature)
+                 })
+            }
             this.setState({
                 isLoaded: true,
-                items:  JSON.parse(JSON.stringify(data)).temperatures
+                items:  temperatures.temperatures
 
             })
 
@@ -85,13 +100,14 @@ export class TemperatureGraph extends React.Component {
             {this.state.isLoaded ?
                 <LineChart width={1400} height={600} data={this.state.items}
                            margin={{ top: 5, right: 10, left: 50, bottom: 5 }}
+                           style={{backgroundColor:'white',opacity:'.5'}}
                 >
                     <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="date"  label="Date"/>
-                    <YAxis dataKey="temperature" label={xAxisLabel()}/>
-                    <Tooltip />
+                    <XAxis dataKey="date"  label={yAxisLabel()} />
+                    <YAxis dataKey="temperature" label={xAxisLabel()} domain={['auto','auto']}/>
+                    {/*<Tooltip />*/}
                     <Legend />
-                    <Line type="monotone" dataKey="temperature" stroke="#8884d8" />
+                    <Line strokeWidth="2" type="monotone" dataKey="temperature" stroke="#000080" fill='#4286f4' className="tempLine"/>
                 </LineChart> : <span></span>}
 
             </div>
@@ -101,6 +117,13 @@ export class TemperatureGraph extends React.Component {
 
 const xAxisLabel = ( ) => {
     return <div className="xAxisLabel">
+        <text style={{color:'blue'}}>Date</text>
+
+    </div>
+};
+
+const yAxisLabel = ( ) => {
+    return <div className="yAxisLabel">
         <text style={{color:'blue'}}>Temperature</text>
 
     </div>

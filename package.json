@@ -54,6 +54,7 @@
     "react-svg-loader": "^2.1.0",
     "recharts": "^1.1.0",
     "requirejs": "^2.3.5",
-    "serialport": "^6.2.2"
+    "serialport": "^6.2.2",
+    "moment": "latest"
   }
 }

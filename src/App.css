@@ -187,9 +187,16 @@
   border-radius: 15px;
 }
 
+
+/*temp graph*/
 .graphic-container {
-  width:80%;
+  width:1400px;
   margin-top: 5%;
+  border: 100pt double;
+}
+
+.tempLine {
+  opacity:1;
 }
 
 
